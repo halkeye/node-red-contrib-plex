@@ -47,6 +47,7 @@ module.exports = function (RED) {
             port: this.server.port,
             username: this.server.username,
             password: this.server.password,
+            https: this.server.https,
             timeout: Math.max(config.pollspeed, 300),
             options: {
                 product: 'Node Red module by LJPc',
