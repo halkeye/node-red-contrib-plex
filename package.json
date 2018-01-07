@@ -1,0 +1,19 @@
+{
+  "name": "node-red-contrib-plex",
+  "version": "0.0.1",
+  "description": "Information from and controlling a Plex server",
+  "dependencies": {
+    "plex-api": "^5.0.2"
+  },
+  "keywords": [
+    "node-red",
+    "plex"
+  ],
+  "node-red": {
+    "nodes": {
+      "controller": "plex/controller.js",
+      "currently_playing": "plex/currentlyplaying.js",
+      "current_state": "plex/state.js"
+    }
+  }
+}

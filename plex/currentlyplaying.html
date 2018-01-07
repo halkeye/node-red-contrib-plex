@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Currently playing', {
+        category: 'media',
+        color: '#C0C0C0',
+        defaults: {
+            server: {required: true, type: 'Plex server'},
+            pollspeed: {value: 3000, required: true, validate: RED.validators.number()},
+            name: {value: ""}
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "plex.png",
+        label: function () {
+            return this.name || "Currently playing";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Currently playing">
+    <div class="form-row">
+        <label for="node-input-server"><i class="icon-tag"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Server">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-pollspeed"><i class="icon-bookmark"></i> Poll speed</label>
+        <input type="text" id="node-input-pollspeed" placeholder="Poll speed">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-bookmark"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Currently playing">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Currently playing">
+    <p>A node that sends an update when the playstate on a specified Plex Server changes</p>
+</script>

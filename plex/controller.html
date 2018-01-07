@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Plex server', {
+        category: 'config',
+        defaults: {
+            host: {value: "127.0.0.1", required: true},
+            port: {value: 32400, required: true, validate: RED.validators.number()},
+            username: {required: true},
+            password: {required: true}
+        },
+        label: function () {
+            return this.host + ":" + this.port;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Plex server">
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+        <input type="text" id="node-config-input-port">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-username"><i class="icon-user"></i> Username</label>
+        <input type="text" id="node-config-input-username">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="icon-bookmark"></i> Password</label>
+        <input type="password" id="node-config-input-password">
+    </div>
+
+</script>
